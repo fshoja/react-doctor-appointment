@@ -2,11 +2,15 @@
 
 A responsive doctor appointment booking application built with React and Vite.
 
-## Preview
+## 🔗 Live Demo
+
+**[View Live Demo](https://react-doctor-appointment.vercel.app/)**
+
+## 🖼️ Preview
 
 ![MediTrack Preview](./public/img/meditrack-preview.png)
 
-## Features
+## ✨ Features
 
 - Browse doctors and their specialties
 - Search doctors by name
@@ -14,44 +18,67 @@ A responsive doctor appointment booking application built with React and Vite.
 - Book and cancel appointments
 - Prevent duplicate appointments
 - Save appointments in localStorage
+- Persist appointment data after page refresh
 - Responsive layout for different screen sizes
+- Persian right-to-left (RTL) interface
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - React
 - Vite
-- JavaScript
-- CSS
-- localStorage
+- JavaScript (ES6+)
+- CSS3
+- React Hooks
+- Browser localStorage
 
-## Getting Started
+## 🚀 Getting Started
 
-Clone the repository:
+### Prerequisites
+
+Make sure you have Node.js and npm installed.
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/fshoja/meditrack.git
 ```
 
-Install dependencies:
+### 2. Navigate to the project folder
+
+```bash
+cd meditrack
+```
+
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-Start the development server:
+### 4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-## Build
+Open the local URL displayed in your terminal to view the application.
+
+## 🏗️ Production Build
+
+To create a production-ready build, run:
 
 ```bash
 npm run build
 ```
 
-## Author
+## 👩‍💻 Author
 
-Farzaneh Shoja
+**Farzaneh Shoja**
 
-GitHub: https://github.com/fshoja
+- GitHub: [@fshoja](https://github.com/fshoja)
+- Live Demo: [MediTrack](https://react-doctor-appointment.vercel.app/)
+
+---
+
+Developed as a front-end portfolio project to practice React development, state management, and interactive user interfaces.
+

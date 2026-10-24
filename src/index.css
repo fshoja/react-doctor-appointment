@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("./assets/fonts/Vazir-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("./assets/fonts/Vazir.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: "Vazirmatn", sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #334155;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}

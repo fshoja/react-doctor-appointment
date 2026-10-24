@@ -1,0 +1,746 @@
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #147d92;
+  --primary-dark: #106575;
+  --primary-light: #e7f4f6;
+  --background: #f7f9fc;
+  --surface: #ffffff;
+  --text: #172b4d;
+  --text-muted: #65748b;
+  --border: #e5eaf0;
+  --danger: #dc2626;
+  --danger-light: #fff1f2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(20, 125, 146, 0.3);
+  outline-offset: 3px;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 0 7%;
+}
+
+
+   /* هدر و منو */
+
+
+.header {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: var(--text-muted);
+}
+
+.nav a {
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+
+.header-btn,
+.hero-btn {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 22px;
+  background: var(--primary);
+  color: white;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.header-btn:hover,
+.hero-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+
+   /* بخش اصلی صفحه */
+
+
+.hero {
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 45px 0;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-label {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.hero-description {
+  max-width: 450px;
+  color: var(--text-muted);
+  line-height: 2;
+  margin-bottom: 28px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 460px;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .hero-description {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+   /* عنوان بخش‌ها */
+
+
+.doctors-section {
+  padding: 60px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-heading p {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.section-heading span {
+  color: var(--text-muted);
+  line-height: 2;
+}
+
+
+   /* کارت پزشکان */
+
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.doctor-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(23, 43, 77, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(23, 43, 77, 0.1);
+}
+
+.doctor-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.doctor-info {
+  padding: 22px;
+}
+
+.doctor-info h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.doctor-specialty {
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+
+.doctor-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.doctor-btn {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px;
+  background: var(--primary-dark);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.doctor-btn:hover {
+  background: var(--primary);
+}
+
+.doctor-btn:focus-visible {
+  outline: 3px solid rgba(20, 125, 146, 0.3);
+  outline-offset: 3px;
+}
+
+
+   /* فرم رزرو نوبت */
+
+
+.booking-form {
+  width: 100%;
+  max-width: 450px;
+  margin: 35px auto;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(20, 50, 80, 0.08);
+  text-align: right;
+}
+
+.booking-form h2 {
+  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.booking-form > p,
+.booking-form .selected-doctor {
+  margin-bottom: 20px;
+  padding: 12px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-radius: 8px;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-form label {
+  margin-top: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(20, 125, 146, 0.1);
+}
+
+.booking-form input[type="time"] {
+  direction: ltr;
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+.booking-form form button {
+  margin-top: 12px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.booking-form form button[type="submit"] {
+  background: var(--primary);
+  color: white;
+}
+
+.booking-form form button[type="submit"]:hover {
+  background: var(--primary-dark);
+}
+
+.booking-form form button[type="button"] {
+  margin-top: 0;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.booking-form form button[type="button"]:hover {
+  background: #e2e8f0;
+}
+
+
+   /* فهرست نوبت‌ها */
+
+
+.appointments-list {
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(18, 49, 90, 0.06);
+  text-align: right;
+}
+
+.appointments-list h2 {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  color: var(--text);
+  font-size: 24px;
+  border-bottom: 2px solid #e8eef6;
+}
+
+.appointments-list > p {
+  padding: 20px;
+  background: var(--background);
+  border-radius: 10px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.appointment-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin-bottom: 18px;
+  padding: 22px;
+  background: #f8faff;
+  border: 1px solid #e2eaf5;
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.appointment-card:last-child {
+  margin-bottom: 0;
+}
+
+.appointment-card:hover {
+  box-shadow: 0 5px 16px rgba(18, 49, 90, 0.08);
+  transform: translateY(-2px);
+}
+
+.appointment-card p {
+  margin: 0;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.appointment-card button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 10px 22px;
+  background: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.appointment-card button:hover {
+  background: #ffe4e6;
+}
+
+.appointment-card button:active {
+  transform: scale(0.98);
+}
+
+
+   /* جست‌وجو و فیلتر پزشکان */
+
+
+.search-box {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 30px;
+}
+
+.search-box input,
+.search-box select {
+  min-width: 0;
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  color: var(--text);
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box input {
+  flex: 1;
+  width: 100%;
+}
+
+.search-box select {
+  width: 190px;
+  cursor: pointer;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(20, 125, 146, 0.12);
+}
+
+
+   /* داشبورد */
+
+
+.dashboard {
+  margin: 30px 0;
+  padding: 25px;
+  background-color: #f5f9fc;
+  border-radius: 16px;
+  text-align: right;
+}
+
+.dashboard h2 {
+  margin-bottom: 22px;
+  color: #17324d;
+  font-size: 22px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  padding: 24px;
+  background: white;
+  border: 1px solid #e5edf2;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(23, 50, 77, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(23, 50, 77, 0.09);
+}
+
+.dashboard-card h3 {
+  margin-bottom: 14px;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.dashboard-card p {
+  margin: 0;
+  color: var(--primary);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+   /* فوتر */
+
+
+.footer {
+  margin-top: 50px;
+  padding: 35px 20px;
+  background: #17324d;
+  color: white;
+  text-align: center;
+  border-radius: 16px 16px 0 0;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+.footer p {
+  margin-bottom: 15px;
+  color: #d6e4ef;
+  font-size: 14px;
+}
+
+.footer span {
+  color: #b9c9d8;
+  font-size: 12px;
+}
+
+
+   /* تبلت */
+
+
+@media (max-width: 900px) {
+  .app {
+    padding: 0 5%;
+  }
+
+  .doctors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+   /* موبایل */
+
+
+@media (max-width: 700px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    padding: 35px 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero h2 {
+    font-size: 30px;
+  }
+
+  .doctors-section {
+    padding: 40px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .doctors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-image {
+    height: 250px;
+  }
+
+  .appointments-list {
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .appointments-list h2 {
+    font-size: 21px;
+  }
+
+  .appointment-card {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .appointment-card button {
+    grid-column: auto;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box select {
+    width: 100%;
+  }
+
+  .dashboard {
+    padding: 16px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    padding: 28px 15px;
+  }
+
+  .footer h2 {
+    font-size: 21px;
+  }
+}
+
+
+   /* موبایل کوچک */
+
+
+@media (max-width: 480px) {
+  .app {
+    padding: 0 4%;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .header-btn {
+    padding: 10px 13px;
+    font-size: 13px;
+  }
+
+  .nav {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .booking-form {
+    margin: 24px auto;
+    padding: 20px;
+  }
+
+  .appointments-list {
+    padding: 15px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    padding: 18px;
+  }
+
+  .dashboard-card p {
+    font-size: 26px;
+  }
+}
